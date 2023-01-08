@@ -8,6 +8,12 @@ authors = ["Ilya Pestov <skinlinkg01@gmail.com>"]
 python = "^3.9"
 SQLAlchemy = "^1.4.45"
 fastapi = "^0.88.0"
+pydantic = {extras = ["dotenv"], version = "^1.10.4"}
+asyncpg = "^0.27.0"
+validators = "^0.20.0"
+alembic = "^1.9.1"
+psycopg2-binary = "^2.9.5"
+uvicorn = "^0.20.0"
 
 [tool.poetry.dev-dependencies]
 black = "^22.12.0"
