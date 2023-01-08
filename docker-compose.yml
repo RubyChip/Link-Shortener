@@ -1,0 +1,29 @@
+version: "3.9"
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend.dockerfile
+    command: uvicorn app.api.run:app --host 0.0.0.0 --port 80
+
+    depends_on:
+      - db
+    ports:
+      - 80:80
+      - 5678:5678
+    volumes:
+      - .:/app
+    env_file:
+      - env/.env.example
+
+  db:
+    image: postgres:13
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=shortener
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=shortener_db
+
+volumes:
+  postgres_data:
