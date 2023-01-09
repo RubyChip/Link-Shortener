@@ -1,7 +1,7 @@
 import validators
 from typing import Optional
 from datetime import datetime
-from fastapi import APIRouter, Depends, HTTPException, Path, Response
+from fastapi import APIRouter, Depends, HTTPException, Response
 from sqlalchemy.ext.asyncio import AsyncSession
 
 
